@@ -14,6 +14,7 @@
 
 # (system_id, gpu_name_from_driver, gpu_count)
 system_list = ([
+    ("T4x1", "Tesla T4", 1),
     ("T4x8", "Tesla T4", 8),
     ("T4x20", "Tesla T4", 20),
     ("TitanRTXx4", "TITAN RTX", 4),
