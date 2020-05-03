@@ -72,3 +72,24 @@ download models
 root@30f549b94c1c:/work# make download_model
 ```
 
+## resnet benchmark
+calibrate
+```
+make calibrate RUN_ARGS="--benchmarks=resnet"
+```
+
+run offline benchmark
+```
+make run RUN_ARGS="--benchmarks=ResNet50 --scenarios=offline --gpu_batch_size=128"
+```
+
+run offline benchmark
+```
+make run RUN_ARGS="--benchmarks=ResNet50 --scenarios=offline --test_mode=PerformanceOnly"
+```
+
+
+## SSD benchmark
+```
+make calibrate RUN_ARGS="--benchmarks=ssd-large"
+```
