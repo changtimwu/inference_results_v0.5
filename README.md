@@ -39,6 +39,12 @@ root@30f549b94c1c:/work#
 
 ```
 
+## download dataset
+download `imagenet`, `coco`, `gnmt` dataset
+```
+./download_dataset.sh
+```
+
 ## build MLPerf
 
 * first time build 
