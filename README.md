@@ -21,4 +21,37 @@ mlperf-inference            wk                              150c70e3abbd        
 we will build and run MLPerf inside the container
 ```
 ./wkrun.sh
-``` 
+
+=====================
+== NVIDIA TensorRT ==
+=====================
+
+NVIDIA Release 19.09 (build 7989553)
+
+NVIDIA TensorRT 6.0.1 (c) 2016-2019, NVIDIA CORPORATION.  All rights reserved.
+Container image (c) 2019, NVIDIA CORPORATION.  All rights reserved.
+
+https://developer.nvidia.com/tensorrt
+
+To install Python sample dependencies, run /opt/tensorrt/python/python_setup.sh
+
+root@30f549b94c1c:/work# 
+
+```
+
+## build MLPerf
+
+* first time build 
+```
+root@30f549b94c1c:/work# make build 
+```
+
+* you are supoosed to encounter errors.   that's because the generated `pkg-config.py` is using python2 syntax.  Replace it with ours.
+
+```
+cp ./wkfiles/pkg-config.py ./build/inference/build/config/linux/pkg-config.py
+```
+* build again
+```
+make build
+```
