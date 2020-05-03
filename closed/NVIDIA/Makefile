@@ -15,7 +15,7 @@
 SHELL := /bin/bash
 MAKEFILE_NAME := $(lastword $(MAKEFILE_LIST))
 
-ARCH := $(shell uname -p)
+ARCH := x86_64
 UNAME := $(shell whoami)
 UID := $(shell id -u `whoami`)
 GROUPNAME := $(shell id -gn `whoami`)
@@ -266,9 +266,9 @@ build_plugins:
 build_loadgen:
 	@echo "Building loadgen..."
 	@cd $(INFERENCE_DIR)/third_party/ninja \
-		&& python2 configure.py --bootstrap \
+		&& python configure.py --bootstrap \
 		&& cd ../.. \
-		&& python2 third_party/gn/build/gen.py \
+		&& python third_party/gn/build/gen.py \
 		&& third_party/ninja/ninja -C third_party/gn/out \
 		&& cp third_party/gn/out/gn* third_party/gn/. \
 		&& third_party/gn/gn gen out/MakefileGnProj --args="is_debug=$(LOADGEN_DEBUG_BUILD)" \
