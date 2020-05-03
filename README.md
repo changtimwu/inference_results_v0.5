@@ -55,9 +55,20 @@ root@30f549b94c1c:/work# make build
 * you are supoosed to encounter errors.   that's because the generated `pkg-config.py` is using python2 syntax.  Replace it with ours.
 
 ```
-cp ./wkfiles/pkg-config.py ./build/inference/build/config/linux/pkg-config.py
+root@30f549b94c1c:/work# cp ./wkfiles/pkg-config.py ./build/inference/build/config/linux/pkg-config.py
 ```
 * build again
 ```
 make build
 ```
+
+## preprocess dataset
+this takes quite a lot time
+```
+root@13fb055d9466:/work# make preprocess_data
+```
+download models
+```
+root@30f549b94c1c:/work# make download_model
+```
+
